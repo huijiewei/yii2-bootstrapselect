@@ -28,7 +28,7 @@ class BootstrapSelectWidget extends InputWidget
         parent::init();
 
         $this->options = ArrayHelper::merge([
-            'class' => 'form-control selectpicker',
+            'class' => 'selectpicker',
         ], $this->options);
 
         $this->clientOptions = ArrayHelper::merge([
