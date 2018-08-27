@@ -14,7 +14,7 @@ use yii\helpers\Json;
 use yii\web\AssetBundle;
 use yii\widgets\InputWidget;
 
-class BootstrapselectWidget extends InputWidget
+class BootstrapSelectWidget extends InputWidget
 {
     public $items = [];
 
@@ -45,7 +45,11 @@ class BootstrapselectWidget extends InputWidget
     {
         parent::run();
 
-        return ($this->hasModel() ? Html::activeDropDownList($this->model, $this->attribute, $this->items, $this->options) : Html::dropDownList($this->name, $this->value, $this->items, $this->options));
+        if($this->hasModel()) {
+            return Html::activeDropDownList($this->model, $this->attribute, $this->items, $this->options);
+        } else {
+            return Html::dropDownList($this->name, $this->value, $this->items, $this->options);
+        }
     }
 
     public function registerLanguage()
@@ -74,7 +78,7 @@ EOD;
 
     public function registerAssetBundle()
     {
-        $this->_assetBundle = BootstrapselectAsset::register($this->getView());
+        $this->_assetBundle = BootstrapSelectAsset::register($this->getView());
     }
 
     public function getAssetBundle()

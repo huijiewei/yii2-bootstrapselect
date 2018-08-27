@@ -10,12 +10,12 @@ namespace huijiewei\bootstrapselect;
 
 use yii\web\AssetBundle;
 
-class BootstrapselectAsset extends AssetBundle
+class BootstrapSelectAsset extends AssetBundle
 {
-    public $sourcePath = '@huijiewei/bootstrapselect/assets';
+    public $sourcePath = '@npm/bootstrap-select/dist';
 
     public $js = [
-        'js/bootstrap-select.js',
+        'js/bootstrap-select.min.js',
     ];
 
     public $css = [
